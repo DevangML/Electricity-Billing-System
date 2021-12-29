@@ -132,7 +132,7 @@ public class Signup extends JFrame implements ActionListener{
                 if(user.equals("Admin")){
                     str = "insert into login values('"+meter+"', '"+username+"', '"+name+"', '"+password+"', '"+user+"')";
                 }else{
-                    str = "update login set username = '"+username+"', name = '"+name+"', password = '"+password+"', user = '"+user+"' where meter_no = '"+t4.getText()+"'";
+                    str = "update login set username = '"+username+"', name = '"+name+"', password = '"+password+"', user = '"+user+"' where meter = '"+t4.getText()+"'";
                 }
                 
                 c.s.executeUpdate(str);
