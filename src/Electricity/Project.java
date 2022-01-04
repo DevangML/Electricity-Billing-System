@@ -103,44 +103,7 @@ public class Project extends JFrame implements ActionListener{
         info2.addActionListener(this);
         
         
-        
-        
-        
-        // --------------------------------------------------------------------------------------------
-        
-        
-        /* Second Column */
-        JMenu user = new JMenu("User");
-        JMenuItem u1 = new JMenuItem("Pay Bill");
-        
-        JMenuItem u3 = new JMenuItem("Bill Details");
-        user.setForeground(Color.RED);
-        
-        /* ---- Pay Bill ---- */
-        u1.setFont(new Font("monospaced",Font.PLAIN,12));
-        ImageIcon icon4 = new ImageIcon(ClassLoader.getSystemResource("icon/icon4.png"));
-        Image image4 = icon4.getImage().getScaledInstance(20, 20,Image.SCALE_DEFAULT);
-        u1.setIcon(new ImageIcon(image4));
-        u1.setMnemonic('P');
-        u1.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_P, ActionEvent.CTRL_MASK));
-        u1.setBackground(Color.WHITE);
-        
-        /* ---- Last Bill ----*/
-        u3.setFont(new Font("monospaced",Font.PLAIN,12));
-        ImageIcon icon6 = new ImageIcon(ClassLoader.getSystemResource("icon/icon6.png"));
-        Image image6 = icon6.getImage().getScaledInstance(20, 20,Image.SCALE_DEFAULT);
-        u3.setIcon(new ImageIcon(image6));
-        u3.setMnemonic('L');
-        u3.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_L, ActionEvent.CTRL_MASK));
-        u3.setBackground(Color.WHITE);
-        
-        u1.addActionListener(this);
-        u3.addActionListener(this);
-        
-        
-        // --------------------------------------------------------------------------------------------- 
-        
-        /* Third Column*/
+        /* Second Column*/
         JMenu report = new JMenu("Report");
         JMenuItem r1 = new JMenuItem("Generate Bill");
         report.setForeground(Color.BLUE);
@@ -158,7 +121,7 @@ public class Project extends JFrame implements ActionListener{
         
         // -----------------------------------------------------------------------------------------------
         
-        /* Fourth Column*/
+        /* Third Column*/
         JMenu utility = new JMenu("Utility");
         JMenuItem ut1 = new JMenuItem("Notepad");
         JMenuItem ut2 = new JMenuItem("Calculator");
@@ -199,7 +162,7 @@ public class Project extends JFrame implements ActionListener{
         
         // ---------------------------------------------------------------------------------------
         
-        /*Fifth Column */
+        /*Fourth Column */
         JMenu exit = new JMenu("Logout");
         JMenuItem ex = new JMenuItem("Logout");
         exit.setForeground(Color.BLUE);
@@ -226,9 +189,7 @@ public class Project extends JFrame implements ActionListener{
         
         info.add(info1);
         info.add(info2);
-        
-        user.add(u1);
-        user.add(u3);
+       
         
         report.add(r1);
         
@@ -242,7 +203,6 @@ public class Project extends JFrame implements ActionListener{
             mb.add(master);
         }else{             
             mb.add(info);
-            mb.add(user);
             mb.add(report);
         }
         mb.add(utility);
@@ -265,10 +225,9 @@ public class Project extends JFrame implements ActionListener{
         }else if(msg.equals("Calculate Bill")){
             new CalculateBill().setVisible(true);
             
-        }else if(msg.equals("Pay Bill")){
-            new PayBill(meter).setVisible(true);
-           
-        }else if(msg.equals("Notepad")){
+                   
+        }
+        	else if(msg.equals("Notepad")){
             try{
                 Runtime.getRuntime().exec("notepad.exe");
             }catch(Exception e){ }
@@ -284,16 +243,13 @@ public class Project extends JFrame implements ActionListener{
             this.setVisible(false);
             new Login().setVisible(true);
         }else if(msg.equals("Generate Bill")){
-            new GenerateBill(meter).setVisible(true);
-            
+            new GenerateBill(meter).setVisible(true);        
         }else if(msg.equals("Deposit Details")){
             new DepositDetails().setVisible(true);
         }else if(msg.equals("View Information")){
             new ViewInformation(meter).setVisible(true);
         }else if(msg.equals("Update Information")){
             new UpdateInformation(meter).setVisible(true);
-        }else if(msg.equals("Bill Details")){
-            new BillDetails(meter).setVisible(true);
         }
         
         

@@ -7,7 +7,7 @@ public class Conn{
     Statement s;
     public Conn(){  
         try{  
-        	String url="jdbc:mysql://localhost:3306/e-billing-db";
+        	String url="jdbc:mysql://localhost:3306/oop-cp-1";
     		String user="root";
     		String pwd="";
             Class.forName("com.mysql.cj.jdbc.Driver");  
