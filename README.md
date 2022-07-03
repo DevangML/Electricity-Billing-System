@@ -1,6 +1,6 @@
-# OOP-CP
+# Topic
 
-This is repo for OOP Course Project
+This is repo for electricity billing system project
 
 # To run the project
 
